@@ -1,0 +1,1 @@
+# smart-buffer-stock-solution
