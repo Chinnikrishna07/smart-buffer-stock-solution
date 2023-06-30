@@ -1,0 +1,125 @@
+{
+    "version":1,
+    "allow_edit":true,
+    "plugins":["/plugins/all"],
+    "panes":
+    [
+        {
+            "width":1,
+            "row":{"3":1},
+            "col":{"3":1},
+            "col_width":4,
+            "widgets":
+            [
+                {
+                    "type":"plugin531a3b2b7df9e78c7300000f",
+                    "settings":
+                    {
+                        "html":"<h1 style=\"text-align:center\"> Smart Buffer Stock Solution </h1>",
+                        "height":"1"
+                    }
+                }
+            ]
+        },
+        {
+            "title":"Hyderabad Storage",
+            "width":1,
+            "row":{"3":5,"5":5},"col":{"3":1,"5":1},
+            "col_width":1,
+            "widgets":
+            [
+                {
+                    "type":"gauge_widget",
+                    "settings":
+                    {
+                        "title":"Percentage",
+                        "value":"(400-datasources[\"Hyd Storage\"][\"content\"][\"dist\"])*0.25",
+                        "units":"%","min_value":0,"max_value":"100"
+                    }
+                },
+                {
+                    "type":"text_widget",
+                    "settings":
+                    {
+                        "title":"Weight","size":"regular",
+                        "value":"(400-datasources[\"Hyd Storage\"][\"content\"][\"dist\"])*0.01*5*5*700",
+                        "sparkline":true,
+                        "animate":true,"units":"Kg"
+                    }
+                }
+            ]
+        },
+        {
+            "title":"Mumbai Storage",
+            "width":1,"row":{"3":5,"6":5},"col":{"3":2,"6":2},
+            "col_width":1,
+            "widgets":
+            [{
+                "type":"gauge_widget",
+                "settings":
+                {"title":"Mumbai Storage",
+                "value":"(400-datasources[\"Mumbai Storage\"][\"dist\"])*0.25",
+                "units":"%","min_value":0,"max_value":"100"
+                }
+            },
+            {
+                "type":"text_widget",
+                "settings":
+                    {
+                        "title":"Weight","size":"regular",
+                        "value":"(400-datasources[\"Mumbai Storage\"][\"dist\"])*0.01*5*5*700",
+                        "sparkline":true,"animate":true,"units":"Kg"
+                    }
+            }
+            ]},
+            {
+                "title":"Delhi Storage","width":1,"row":{"3":5,"6":5},
+                "col":{"3":3,"6":3},"col_width":1,
+                "widgets":
+                [{"type":"gauge_widget",
+                "settings":
+                {
+                    "title":"Percentage",
+                    "value":"(400-datasources[\"Delhi Storage\"][\"dist\"])*0.25",
+                    "units":"%","min_value":0,"max_value":100
+                }},
+                {
+                    "type":"text_widget",
+                    "settings":
+                    {
+                        "title":"Weight","size":"regular",
+                        "value":"(400-datasources[\"Delhi Storage\"][\"dist\"])*0.01*5*5*700",
+                        "sparkline":true,"animate":true,"units":"Kg"
+                    }
+                }
+                ]
+            }
+    ],
+    "datasources":
+    [
+        {
+            "name":"Hyd Storage","type":"dweet_io",
+            "settings":
+            {
+                "thing_id":"hyd-storage","show_full":true,"name":"Hyd Storage"
+            }
+        },
+        {
+            "name":"Mumbai Storage","type":"dweet_io",
+            "settings":
+            {
+                "thing_id":"mumb-storage","show_full":false,"name":"Mumbai Storage"
+            }
+        },
+        {
+            "name":"Delhi Storage","type":"dweet_io",
+            "settings":
+            {
+                "thing_id":"del-storage","show_full":false,"name":"Delhi Storage"
+            }
+        }
+    ],
+    "columns":3,
+    "pane_header_bg_color":null,
+    "pane_bg_color":null
+}
